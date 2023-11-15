@@ -206,3 +206,33 @@ code {
 .hidden2 {
   display: none;
 }
+
+.contect {
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+  grid-gap: 1em;
+  font-size: 2em;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 800px) {
+  .threeCol {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    font-size: 1em;
+  }
+
+  ul {
+    font-size: .5em;
+  }
+
+  p {
+    max-width: 90%;
+  }
+
+  img {
+    max-width: 90%;
+  }
+}
