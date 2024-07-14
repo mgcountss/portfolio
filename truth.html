@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthSocial Live Count</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highstock/6.0.3/highstock.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .counters {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            margin-top: 3em;
+        }
+
+        .odometer {
+            font-size: 5em;
+        }
+
+        .lol {
+            padding: 5em;
+            text-align: center;
+            width: 50%;
+            padding-top: 0em;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-top: 0em;
+            margin-bottom: 0em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 0em;
+        }
+
+        .chart {
+            height: 15em;
+        }
+
+        .header {
+            background-color: #333;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #post {
+            font-size: 1.5em;
+            color: #f0f0f0;
+            padding: 0.5em;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: #333;
+            margin-top: 0.3em;
+        }
+
+        .subtitle2 {
+            color: #333;
+            margin-top: 0.3em;
+            font-size: 1em;
+        }
+
+        .odometer2 {
+            font-size: 2em;
+        }
+
+        .counters2 {
+            display: flex;
+            justify-content: center;
+            margin-top: 0em;
+        }
+
+        .lol2 {
+            padding: 0em;
+            text-align: center;
+            width: 50%;
+            padding-top: 0em;
+        }
+
+        .odometer3 {
+            font-size: 2em;
+            color: #333;
+            margin-top: 0em;
+        }
+
+        .subtitle3 {
+            color: #333;
+            margin-top: 0em;
+            font-size: 1em;
+            margin-bottom: 0em;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #bdbdbd;
+            margin-top: 0em;
+            margin-bottom: 1em;
+        }
+
+        .user {
+            width: 30%;
+            text-align: left;
+            display: flex;
+        }
+
+        .user_pfp {
+            border-radius: 50%;
+            width: 5em;
+            height: 5em;
+            border: solid 0.2em #f0f0f0;
+        }
+
+        .user_name {
+            font-size: 2em;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            color: #f0f0f0;
+        }
+
+        .user_username {
+            font-size: 1em;
+            margin-top: 0em;
+            color: #c9c9c9;
+        }
+
+        .user_stats {
+            margin-top: -0.5em;
+            font-size: 0.9em;
+            color: #f0f0f0;
+        }
+
+        .user_info {
+            margin-left: 1em;
+        }
+
+        .header_img {
+            object-fit: cover;
+            height: 7.5em;
+            width: 50%;
+        }
+
+        .svg {
+            fill: rgb(255, 71, 117);
+            height: 1em;
+            width: 1em;
+            margin-left: 0.2em;
+            margin-top: 0em;
+        }
+
+        .flex {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <center>
+            <img src="https://static-assets-1.truthsocial.com/tmtg:prime-ts-assets/accounts/headers/107/780/257/626/128/497/original/ba3b910ba387bf4e.jpeg"
+                class="header_img">
+            <div class="user">
+                <img src="https://static-assets-1.truthsocial.com/tmtg:prime-ts-assets/accounts/avatars/107/780/257/626/128/497/original/454286ac07a6f6e6.jpeg"
+                    class="user_pfp">
+                <div class="user_info">
+                    <h1 class="user_name">Donald J. Trump</h1>
+                    <div class="flex">
+                        <h2 class="user_username">@realDonaldTrump</h2><svg width="24" height="24" viewBox="0 0 20 20"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" class="svg" data-testid="svg-icon">
+                            <title>Verified Account</title>
+                            <path
+                                d="M8.82.521a1.596 1.596 0 012.36 0l.362.398c.42.46 1.07.635 1.664.445l.512-.163a1.596 1.596 0 012.043 1.18l.115.525a1.596 1.596 0 001.218 1.218l.525.115a1.596 1.596 0 011.18 2.043l-.163.513a1.596 1.596 0 00.446 1.663l.397.362a1.596 1.596 0 010 2.36l-.397.362c-.461.42-.635 1.07-.446 1.664l.163.512a1.596 1.596 0 01-1.18 2.043l-.525.115a1.596 1.596 0 00-1.218 1.218l-.115.525a1.596 1.596 0 01-2.043 1.18l-.512-.163a1.596 1.596 0 00-1.664.445l-.362.398a1.596 1.596 0 01-2.36 0l-.362-.398a1.596 1.596 0 00-1.663-.445l-.513.163a1.596 1.596 0 01-2.043-1.18l-.115-.525a1.596 1.596 0 00-1.218-1.218l-.525-.115a1.596 1.596 0 01-1.18-2.043l.164-.512a1.596 1.596 0 00-.446-1.664L.52 11.18a1.596 1.596 0 010-2.36l.398-.362c.46-.42.635-1.07.446-1.663L1.2 6.282a1.596 1.596 0 011.18-2.043l.525-.115a1.596 1.596 0 001.218-1.218l.115-.525A1.596 1.596 0 016.282 1.2l.513.163c.594.19 1.244.015 1.663-.445L8.821.52z"
+                                fill="rgb(255, 71, 117)"></path>
+                            <path d="M6.66 7.464L5.012 9.111l3.85 3.85 5.483-5.481-1.966-1.966L8.544 9.35 6.66 7.464z"
+                                fill="#fff"></path>
+                            <path opacity=".5" d="M11.25 15.55l-1.646-1.848 1.646-1.646 1.887 1.887-1.887 1.606z"
+                                fill="#fff"></path>
+                        </svg>
+                    </div>
+                    <h2 class="user_stats" id="user_stats">0 Followers | 0 Following | 0 Posts</h2>
+                </div>
+            </div>
+        </center>
+        <h1 id="post"></h1>
+    </div>
+    <div class="counters">
+        <div class="lol">
+            <h1 class="odometer" id="odometer1">0</h1>
+            <h2 class="subtitle">Favorites</h2>
+            <div id="chart1" class="chart"></div>
+            <div class="counters2">
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer1_avg1">0</h1>
+                    <h2 class="subtitle2">Avg: 2s</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer1_avg2">0</h1>
+                    <h2 class="subtitle2">Avg: 1m</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer1_avg3">0</h1>
+                    <h2 class="subtitle2">Avg: 1h</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="counters2">
+                <div class="lol2">
+                    <h2 class="subtitle3" id="odometer1_goal_text">Goal: 0</h2>
+                    <h1 class="odometer odometer3" id="odometer1_goal">0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="lol">
+            <h1 class="odometer" id="odometer2">0</h1>
+            <h2 class="subtitle">Reblogs</h2>
+            <div id="chart2" class="chart"></div>
+            <div class="counters2">
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer2_avg1">0</h1>
+                    <h2 class="subtitle2">Avg: 2s</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer2_avg2">0</h1>
+                    <h2 class="subtitle2">Avg: 1m</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer2_avg3">0</h1>
+                    <h2 class="subtitle2">Avg: 1h</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="counters2">
+                <div class="lol2">
+                    <h2 class="subtitle3" id="odometer2_goal_text">Goal: 0</h2>
+                    <h1 class="odometer odometer3" id="odometer2_goal">0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="lol">
+            <h1 class="odometer" id="odometer3">0</h1>
+            <h2 class="subtitle">Replies</h2>
+            <div id="chart3" class="chart"></div>
+            <div class="counters2">
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer3_avg1">0</h1>
+                    <h2 class="subtitle2">Avg: 2s</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer3_avg2">0</h1>
+                    <h2 class="subtitle2">Avg: 1m</h2>
+                </div>
+                <div class="lol2">
+                    <h1 class="odometer odometer2" id="odometer3_avg3">0</h1>
+                    <h2 class="subtitle2">Avg: 1h</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="counters2">
+                <div class="lol2">
+                    <h2 class="subtitle3" id="odometer3_goal_text">Goal: 0</h2>
+                    <h1 class="odometer odometer3" id="odometer3_goal">0</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const values = ['Favorites', 'Reblogs', 'Replies'];
+    const apiURL = 'https://truthsocial.com/api/v1/statuses/' + window.location.href.split('?id=')[1];
+    const odometer1 = document.getElementById('odometer1');
+    const odometer2 = document.getElementById('odometer2');
+    const odometer3 = document.getElementById('odometer3');
+
+    let charts = [];
+    for (let i = 1; i <= 3; i++) {
+        const chart = new Highcharts.chart({
+            chart: {
+                renderTo: 'chart' + i,
+                type: 'spline',
+                zoomType: 'x',
+                backgroundColor: 'transparent',
+                plotBorderColor: 'transparent'
+            },
+            title: {
+                text: ' '
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 500,
+                gridLineColor: '#bdbdbd',
+                labels: {
+                    style: {
+                        color: '#333'
+                    }
+                },
+                lineColor: '#bdbdbd',
+                minorGridLineColor: '#bdbdbd',
+                tickColor: '#bdbdbd',
+                title: {
+                    style: {
+                        color: '#333'
+                    }
+                }
+            },
+            yAxis: {
+                enabled: false,
+                title: {
+                    text: ' '
+                },
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                showInLegend: false,
+                name: values[i - 1],
+                marker: { enabled: false },
+                color: '#000000',
+                lineColor: "#b3382c"
+            }]
+        });
+        charts.push(chart);
+    }
+
+    const average = (arr) => {
+        let sum = 0;
+        for (let i = 0; i < arr.length - 1; i++) {
+            sum += arr[i + 1] - arr[i];
+        }
+        return sum / arr.length;
+    };
+
+    const calcGoal = (count) => {
+        if (count < 10000) return { remaining: 10000 - count, goal: 10000 };
+        const milestones = [10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000, 1000000];
+        let goal;
+        for (let i = 0; i < milestones.length; i++) {
+            if (count < milestones[i]) {
+                goal = milestones[i];
+                break;
+            }
+        }
+        if (!goal) {
+            const numDigits = Math.floor(Math.log10(count)) + 1;
+            const base = Math.pow(10, numDigits - 1);
+            const multiplier = Math.floor(count / base) + 1;
+
+            if (multiplier % 4 === 0) {
+                goal = 3 * base;
+            } else if (multiplier % 2 === 0) {
+                goal = 2 * base;
+            } else {
+                goal = 1 * base;
+            }
+            goal *= Math.floor((multiplier + 2) / 3);
+        }
+
+        return {
+            remaining: goal - count,
+            goal: goal
+        };
+    };
+
+
+    let counts = {
+        favourites_count: [],
+        reblogs_count: [],
+        replies_count: []
+    };
+
+    const updateCount = async () => {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        const count1 = data.favourites_count;
+        const count2 = data.reblogs_count;
+        const count3 = data.replies_count;
+        odometer1.innerHTML = count1;
+        odometer2.innerHTML = count2;
+        odometer3.innerHTML = count3;
+        charts[0].series[0].addPoint([Date.now(), count1]);
+        charts[1].series[0].addPoint([Date.now(), count2]);
+        charts[2].series[0].addPoint([Date.now(), count3]);
+        document.getElementById('post').innerHTML = data.content;
+        counts.favourites_count.push(count1);
+        counts.reblogs_count.push(count2);
+        counts.replies_count.push(count3);
+        if (counts.favourites_count.length > 60) {
+            counts.favourites_count.shift();
+            counts.reblogs_count.shift();
+            counts.replies_count.shift();
+        }
+        const avg1 = average(counts.favourites_count);
+        const avg2 = average(counts.reblogs_count);
+        const avg3 = average(counts.replies_count);
+        document.getElementById('odometer1_avg1').innerHTML = avg1.toFixed(0);
+        document.getElementById('odometer2_avg1').innerHTML = avg2.toFixed(0);
+        document.getElementById('odometer3_avg1').innerHTML = avg3.toFixed(0);
+        document.getElementById('odometer1_avg2').innerHTML = (avg1 * 60).toFixed(0);
+        document.getElementById('odometer2_avg2').innerHTML = (avg2 * 60).toFixed(0);
+        document.getElementById('odometer3_avg2').innerHTML = (avg3 * 60).toFixed(0);
+        document.getElementById('odometer1_avg3').innerHTML = (avg1 * 60 * 60).toFixed(0);
+        document.getElementById('odometer2_avg3').innerHTML = (avg2 * 60 * 60).toFixed(0);
+        document.getElementById('odometer3_avg3').innerHTML = (avg3 * 60 * 60).toFixed(0);
+        const goal1 = calcGoal(count1);
+        const goal2 = calcGoal(count2);
+        const goal3 = calcGoal(count3);
+        document.getElementById('odometer1_goal_text').innerHTML = `Goal: ${goal1.goal.toLocaleString()}`;
+        document.getElementById('odometer2_goal_text').innerHTML = `Goal: ${goal2.goal.toLocaleString()}`;
+        document.getElementById('odometer3_goal_text').innerHTML = `Goal: ${goal3.goal.toLocaleString()}`;
+        document.getElementById('odometer1_goal').innerHTML = goal1.remaining;
+        document.getElementById('odometer2_goal').innerHTML = goal2.remaining;
+        document.getElementById('odometer3_goal').innerHTML = goal3.remaining;
+        document.getElementById('user_stats').innerHTML = `${data.account.followers_count.toLocaleString()} Followers | ${data.account.following_count.toLocaleString()} Following | ${data.account.statuses_count.toLocaleString()} Posts`;
+    }
+    updateCount();
+    setInterval(updateCount, 2000);
+</script>
+
+</html>
