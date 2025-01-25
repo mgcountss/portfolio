@@ -144,6 +144,7 @@ header p img {
     transition: all .3s;
     position: relative;
     width: 30vw;
+    overflow: hidden;
 }
 
 .project-image {
