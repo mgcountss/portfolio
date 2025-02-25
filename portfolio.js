@@ -68,7 +68,7 @@ const portfolio = [
   {
     "name": "YABCounts",
     "description": "YABCounts was a little website (similar to MGCounts & BGTrack) which allowed you to track the subscriber/follower counts of a variety of social media platforms. Its crown jewel was the ability estimate the live subscriber count of YouTube channels (since they were abbreviated).",
-    "images": ["./images/yab.PNG"],
+    "images": ["./images/yab.png"],
     "links": [{ "link_url": "https://web.archive.org/web/20240416224300/https://yabcounts.com/", "link_title": "Visit Archive" }]
   },
   {
