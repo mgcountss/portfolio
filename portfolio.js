@@ -20,7 +20,7 @@ const portfolio = [
   {
     "name": "Bluesky Tracker",
     "description": "After Elon Musk bought Twitter back in October of 2022, he made a lot of perceived negative changes to the platform. This led many to move to the Bluesky platform. I saw this as an amazing opportunity to make a website that tracks the growth of the platform and its users. The website gets over 5,000 daily users according to Cloudflare and is well-known within the platform. In addition, I also made a bsky bot to track milestones of some of its users which has also grown dynamically. *The website is insanely slow for its initial load because I rely on free hosting for it.",
-    "images": ["./images/bsky.PNG"],
+    "images": ["./images/bsky.png"],
     "links": [{ "link_url": "https://bsky-tracker.xyz", "link_title": "Visit Website" }]
   },
   {
