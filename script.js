@@ -103,29 +103,11 @@ portfolio.forEach((project) => {
     div.appendChild(hr);
     project.links.forEach((link) => {
         let a = document.createElement('a');
-        let button = document.createElement('button');
-        button.classList.add('button');
-        button.textContent = link.link_title;
+        a.innerText = link.link_title;
         a.href = link.link_url;
         a.target = '_blank';
-        a.appendChild(button);
+        a.classList.add('button');
         div.appendChild(a);
     });
     document.getElementById('portfolio').appendChild(div);
-});
-
-document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-document.querySelectorAll('.template-card').forEach((item, index) => {
-    item.addEventListener('click', () => {
-        window.location.href = `/templates/template${index + 1}.html`;
-    });
 });
