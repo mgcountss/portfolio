@@ -1,12 +1,5 @@
 const programs = [
     {
-      "href": "https://www.gnu.org/software/bash/",
-      "img": {
-        "src": "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg",
-        "alt": "bash"
-      }
-    },
-    {
       "href": "https://getbootstrap.com",
       "img": {
         "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
@@ -151,13 +144,6 @@ const programs = [
       "img": {
         "src": "https://reactnative.dev/img/header_logo.svg",
         "alt": "reactnative"
-      }
-    },
-    {
-      "href": "https://redis.io",
-      "img": {
-        "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
-        "alt": "redis"
       }
     },
     {

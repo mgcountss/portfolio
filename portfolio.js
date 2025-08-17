@@ -143,7 +143,7 @@ let portfolio = [
     "name": "Real Life (LED) Sub Counter",
     "description": "After seeing a video of a real-life sub counter, I didn't think it would be very difficult to make one myself, so I did! It uses a Raspberry Pi 4 and 117 (~3 strings) LED WS8211 lights. I arranged the lights into a custom board and even programmed a web UI to control it!",
     "images": ["./images/led.png"],
-    "links": [{ "link_url": "#", "link_title": "Visit Website" }, { "link_url": "https://github.com/mgcountss/led-sub-count", "link_title": "View Source Code/Download" }],
+    "links": [{ "link_url": "https://www.youtube.com/live/0VSuOBo1Dy8", "link_title": "View Live Stream Demo" }, { "link_url": "https://github.com/mgcountss/led-sub-count", "link_title": "View Source Code/Download" }],
     "active": true
   },
   {
@@ -159,7 +159,35 @@ let portfolio = [
     "images": ["./images/election.png"],
     "links": [{ "link_url": "https://web.archive.org/web/20241105201938/https://election.mgcounts.com/", "link_title": "Visit Archive" }],
     "active": false
-  }
+  },
+  {
+    "name": "Discord Server Tags",
+    "description": "In May of 2025, Discord released a feature called 'tags.' I spotted this golden oppertunity and made a website as soon as I could to track the tags accross servers. It grew to the largest site of its kind surpassing the likes of even more well-known Discord-related sites.",
+    "images": ["./images/tags.png"],
+    "links": [{ "link_url": "https://tags.mgcounts.com/", "link_title": "Visit Site" }],
+    "active": true
+  },
+  {
+    "name": "Personal Finance Tracker",
+    "description": "This advanced finance tracker keeps track of various aspects of one's financal state such as transactions, budgets, subscriptions, report generation, etc.",
+    "images": ["./images/finance.png"],
+    "links": [],
+    "active": true
+  },
+  {
+    "name": "70&Sunny",
+    "description": "A Mother's day gift for my mom with the sole purpose of showing her warm weather near her. It was an app as well as a website. Enter your location and it displays nearby locations with the chosen weather.",
+    "images": ["./images/sunny.png"],
+    "links": [],
+    "active": true
+  },
+  {
+    "name": "#TeamWater Tracker",
+    "description": "#TeamWater is a fundraiser by MrBeast with a goal to raise 40 million dollars to give clean water. This 24/7 live stream tracked its progress toward its goal.",
+    "images": ["./images/teamwater.png"],
+    "links": [{ "link_url": "https://www.youtube.com/watch?v=r7G3pY2Cb0c", "link_title": "Watch Live" }],
+    "active": true
+  },
 ]  
 
 portfolio = portfolio.sort(item => { return item.active ? -1 : 1 })
