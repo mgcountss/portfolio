@@ -4,95 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>MGCounts — AJ's programming portfolio</title>
+    <meta name="description" content="AJ (SFMG) builds live counters, stat trackers, interactive YouTube streams, and other data-driven websites. Every project, running or retired, is here.">
+    <meta property="og:title" content="MGCounts — AJ's programming portfolio">
+    <meta property="og:description" content="Live counters, stat trackers, interactive YouTube streams, and other data-driven websites by AJ (SFMG).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mgcounts.com/">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <nav>
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <a class="skip" href="#projects">Skip to projects</a>
 
-    <header class="header">
-        <div class="odometer">
-            <div class="digit">
-                <div class="digit-container digit1 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
+    <header class="board">
+        <nav class="wrap topbar" aria-label="Main">
+            <a class="brand" href="#top" id="top">mgcounts</a>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="wrap hero">
+            <h1 class="sr-only">AJ, also known as MG, SFMG, MGCounts, and Straight From MG</h1>
+            <div class="odometer" id="odometer" aria-hidden="true"></div>
+
+            <div class="hero-body">
+                <p class="intro">Hi, I'm AJ, a programmer from the United States. I can program just about anything,
+                    though I specialize in web development, particularly minimal, data-driven websites and interactive
+                    visualizations. Outside of coding, I'm passionate about gymnastics, both practicing and competing,
+                    and I enjoy coaching and helping others, whether indoors or out.</p>
+
+                <dl class="tally" id="tally">
+                    <div>
+                        <dd data-count="total">0</dd>
+                        <dt>projects built</dt>
+                    </div>
+                    <div>
+                        <dd data-count="running">0</dd>
+                        <dt>still running</dt>
+                    </div>
+                    <div>
+                        <dd data-count="retired">0</dd>
+                        <dt>retired</dt>
+                    </div>
+                </dl>
             </div>
-            <div class="digit">
-                <div class="digit-container digit2 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit3 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit4 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit5 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit6 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit7 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit8 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit9 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit10 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit11 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit12 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit13 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
-            <div class="digit">
-                <div class="digit-container digit14 hidden">A B C D E F G F I J K L M N O P Q R S T U V W X Y Z</div>
-            </div>
+
+            <p class="hero-links">
+                <a class="solid" href="#projects">See the projects</a>
+                <a href="mailto:straightfrommgyt@gmail.com">Email me</a>
+            </p>
         </div>
-        <h1>Welcome to My Programming Portfolio</h1>
-        <p>Hi, I'm AJ — an 18-year-old programmer from the United States. I can program just about anything, though I
-            specialize in web development, particularly minimal, data-driven websites and interactive visualizations.
-            Outside of coding, I'm passionate about gymnastics, both practicing and competing, and I enjoy coaching and
-            helping others, whether indoors or out.</p>
-        <i>Need Something? <a href="#footer">Contact Me</a></i>
-        <hr>
-        <p>I've used many many many tools in the past but I'm <b>MOST</b> familiar with:</p>
-        <p id="programs"></p>
     </header>
 
-    <section id="portfolio"></section>
+    <main>
+        <section class="wrap" id="projects" aria-labelledby="projects-title">
+            <div class="section-head">
+                <h2 id="projects-title">Projects</h2>
+                <p id="result-count" aria-live="polite"></p>
+            </div>
 
-    <modal id="expandedImg">
-        <span class="close">&times;</span>
-        <img src="" id="img_expanded">
-    </modal>
+            <div class="filters">
+                <div class="chips" id="status-filter" role="group" aria-label="Filter by status"></div>
+                <div class="chips" id="kind-filter" role="group" aria-label="Filter by type"></div>
+            </div>
 
-    <footer id="contact">
-        <p>
-            <li><a href="https://youtube.com/@sfmg"><i class="fab fa-youtube"></i> YouTube</a></li>
-            <li><a href="https://github.com/mgcountss"><i class="fab fa-github"></i> GitHub</a></li>
-            <li> <a href="mailto:straightfrommgyt@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-        </p>
+            <div class="grid" id="grid"></div>
+            <p class="empty" id="empty" hidden>Nothing matches both filters. <button type="button" id="reset">Show all
+                    projects</button></p>
+            <noscript>
+                <p>The project list needs JavaScript. You can also browse my work on <a
+                        href="https://github.com/mgcountss">GitHub</a>.</p>
+            </noscript>
+        </section>
+
+        <section class="wrap" id="tools" aria-labelledby="tools-title">
+            <div class="section-head">
+                <h2 id="tools-title">Tools</h2>
+            </div>
+            <p class="lede">I've used many, many, many tools over the years. These are the ones I know best.</p>
+            <dl class="tools">
+                <div>
+                    <dt>Languages</dt>
+                    <dd>JavaScript, TypeScript, HTML, CSS, Python, C#</dd>
+                </div>
+                <div>
+                    <dt>Front end</dt>
+                    <dd>React, React Native, Next.js, Vue, Tailwind, Bootstrap, Chart.js</dd>
+                </div>
+                <div>
+                    <dt>Back end and data</dt>
+                    <dd>Node.js, Express, MongoDB, MySQL, Puppeteer</dd>
+                </div>
+                <div>
+                    <dt>Running it</dt>
+                    <dd>Linux, Nginx, Git, Heroku</dd>
+                </div>
+                <div>
+                    <dt>Beyond the web</dt>
+                    <dd>Electron, Unity, Photoshop</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="board" id="contact">
+        <div class="wrap contact">
+            <h2>Need something?</h2>
+            <ul>
+                <li><a href="mailto:straightfrommgyt@gmail.com">straightfrommgyt@gmail.com</a></li>
+                <li><a href="https://youtube.com/@sfmg">YouTube</a></li>
+                <li><a href="https://github.com/mgcountss">GitHub</a></li>
+            </ul>
+        </div>
     </footer>
-    <script src="programs.js"></script>
-    <script src="portfolio.js"></script>
+
+    <dialog id="viewer" aria-labelledby="viewer-title">
+        <form method="dialog">
+            <button class="close" aria-label="Close picture">Close</button>
+        </form>
+        <img id="viewer-img" alt="">
+        <p id="viewer-title"></p>
+    </dialog>
+
+    <script src="projects.js"></script>
     <script src="script.js"></script>
 </body>
-
 
 </html>
